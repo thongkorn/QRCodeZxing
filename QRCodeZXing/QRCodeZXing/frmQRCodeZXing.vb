@@ -57,7 +57,7 @@ Public Class frmQRCodeZXing
         Dim dlgSaveFile As New SaveFileDialog
         With dlgSaveFile
             .Title = "Select images"
-            .Filter = "Image files (*.jpg,*.png,*bmp) | *.jpg; *.png; *.bmp"
+            .Filter = "JPEG Image (.jpg)|*.jpg|Png Image (.png)|*.png|Bitmap Image (.bmp)|*.bmp;"
             .FilterIndex = 1
             .RestoreDirectory = True
             .InitialDirectory = strPathImage
@@ -71,9 +71,9 @@ Public Class frmQRCodeZXing
             Select Case dlgSaveFile.FilterIndex
                 Case 1
                     picBarcode.Image.Save(fs, ImageFormat.Jpeg)
-                Case 3
+                Case 2
                     picBarcode.Image.Save(fs, ImageFormat.Png)
-                Case 4
+                Case 3
                     picBarcode.Image.Save(fs, ImageFormat.Bmp)
             End Select
             fs.Close()
